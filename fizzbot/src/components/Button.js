@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from "./Card";
 
 class Button extends Component  {
   
@@ -12,7 +13,7 @@ class Button extends Component  {
       };
     }
   
-    componentDidMount() {
+    getMessage = async () => {
       fetch(`https://api.noopschallenge.com/fizzbot`)
       .then(response => response.json())
       .then(data => {
@@ -28,7 +29,7 @@ class Button extends Component  {
   render(){
     return (
       <div>
-        <button onClick = {this.message} type="button" className="btn btn-outline-warning">Ask Away</button>
+        <button onClick = {this.getMessage} type="button" className="btn btn-outline-warning">Ask Away</button>
       </div>
     )
   }
